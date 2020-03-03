@@ -10,8 +10,9 @@ it('renders without crashing', () => {
   // first create a DOM element to render the component into
   const div = document.createElement('div');
 
+  
   // render the component, this is the actual test, if something is wrong it will fail here
-  ReactDOM.render(<Card />, div);
+  ReactDOM.render(<Card title='hello' content='hello1' />, div);
 
   // clean up code
   ReactDOM.unmountComponentAtNode(div);
@@ -22,7 +23,7 @@ it('renders without crashing', () => {
  ***************/
 it('renders the UI as expected', () => {
   const tree = renderer
-    .create(<Card />)
+    .create(<Card title='hello' content='hello'/>)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
